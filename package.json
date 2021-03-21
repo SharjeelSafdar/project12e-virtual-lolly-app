@@ -1,5 +1,5 @@
 {
-  "name": "project12d-virtual-lolly-app",
+  "name": "project12e-virtual-lolly-app",
   "private": true,
   "description": "A Serverless JAMstack Virtual Lolly App with Gatsby, Netlify, FaunaDB, GraphQL and TypeScript",
   "version": "0.1.0",
