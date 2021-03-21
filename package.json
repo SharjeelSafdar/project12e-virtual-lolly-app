@@ -30,7 +30,11 @@
     "prettier": "2.2.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "netlify",
+    "faunadb",
+    "graphql",
+    "typescript"
   ],
   "license": "0BSD",
   "scripts": {
