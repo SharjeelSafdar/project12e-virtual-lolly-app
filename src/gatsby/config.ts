@@ -4,7 +4,11 @@ export default {
   siteMetadata: {
     title: `Virtual Lolly App`,
     description: `A Serverless JAMstack Virtual Lolly App with Gatsby, Netlify, FaunaDB, GraphQL and TypeScript.`,
-    author: `Mian Muhammad Sharjeel Safdar <miansharjeelsafdar@gmail.com>`,
+    author: {
+      name: `Mian Muhammad Sharjeel Safdar`,
+      email: `miansharjeelsafdar@gmail.com`,
+      github: `https://github.com/SharjeelSafdar/`,
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
