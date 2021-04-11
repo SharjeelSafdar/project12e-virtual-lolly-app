@@ -1,22 +1,16 @@
 import React, { FC } from "react";
+import { navigate } from "gatsby";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Lolly from "../components/lolly";
-
-type FormValues = {
-  topColor: string;
-  middleColor: string;
-  bottomColor: string;
-  recipientName: string;
-  message: string;
-  sendersName: string;
-};
+import { useCreateLollyMutation } from "../api";
+import { NewLollyFormValues } from "../types";
 
 const IndexPage: FC = () => {
-  const initialValues: FormValues = {
+  const initialValues: NewLollyFormValues = {
     topColor: "#cd2753",
     middleColor: "#d5cfd1",
     bottomColor: "#5ba3da",
@@ -32,8 +26,15 @@ const IndexPage: FC = () => {
     message: Yup.string().required("Required"),
     sendersName: Yup.string().required("Required"),
   });
-  const onSubmit = (values: FormValues) => {
-    console.log(values);
+
+  const [createNewLolly, { loading: isCreating }] = useCreateLollyMutation();
+
+  const onSubmit = async (values: NewLollyFormValues) => {
+    const result = await createNewLolly({
+      variables: { ...values },
+    });
+
+    navigate(`/lolly/${result.data?.createLolly}`);
   };
 
   return (
@@ -116,7 +117,11 @@ const IndexPage: FC = () => {
                     />
                   </p>
                 </div>
-                <input type="submit" value="Freeze this lolly and get a link" />
+                <input
+                  type="submit"
+                  disabled={isCreating}
+                  value="Freeze this lolly and get a link"
+                />
               </div>
             </div>
           </Form>
