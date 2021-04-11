@@ -2,7 +2,9 @@ import React, { FC } from "react";
 import { navigate } from "gatsby";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { ApolloProvider } from "@apollo/client";
 
+import { apolloClient } from "../context/apolloClient";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Lolly from "../components/lolly";
@@ -40,93 +42,95 @@ const IndexPage: FC = () => {
   return (
     <Layout>
       <SEO title="Create New Lolly" />
-      <Formik
-        initialValues={initialValues}
-        onSubmit={onSubmit}
-        validationSchema={validationSchema}
-      >
-        {({ values }) => (
-          <Form name="new-lolly">
-            <div className="lolly">
-              <div className="giftLolly">
-                <Lolly
-                  topColor={values.topColor}
-                  middleColor={values.middleColor}
-                  bottomColor={values.bottomColor}
-                />
-              </div>
-              <div className="flavours">
-                <label htmlFor="topColor" className="pickerLabel">
-                  <Field
-                    as="input"
-                    type="color"
-                    className="colourpicker"
-                    id="topColor"
-                    name="topColor"
+      <ApolloProvider client={apolloClient}>
+        <Formik
+          initialValues={initialValues}
+          onSubmit={onSubmit}
+          validationSchema={validationSchema}
+        >
+          {({ values }) => (
+            <Form name="new-lolly">
+              <div className="lolly">
+                <div className="giftLolly">
+                  <Lolly
+                    topColor={values.topColor}
+                    middleColor={values.middleColor}
+                    bottomColor={values.bottomColor}
                   />
-                </label>{" "}
-                <label htmlFor="middleColor" className="pickerLabel">
-                  <Field
-                    as="input"
-                    type="color"
-                    className="colourpicker"
-                    id="middleColor"
-                    name="middleColor"
-                  />
-                </label>{" "}
-                <label htmlFor="bottomColor" className="pickerLabel">
-                  <Field
-                    as="input"
-                    type="color"
-                    className="colourpicker"
-                    id="bottomColor"
-                    name="bottomColor"
-                  />
-                </label>
-              </div>
-              <div className="info">
-                <div className="details">
-                  <p>
-                    <label htmlFor="recipientName">To</label>{" "}
-                    <Field
-                      as="input"
-                      type="text"
-                      id="recipientName"
-                      name="recipientName"
-                      placeholder="A lolly for..."
-                    />
-                  </p>
-                  <div className="message">
-                    <label htmlFor="message">Say something nice</label>{" "}
-                    <Field
-                      as="textarea"
-                      name="message"
-                      id="message"
-                      cols={30}
-                      rows={10}
-                    />
-                  </div>
-                  <p>
-                    <label htmlFor="sendersName">From</label>{" "}
-                    <Field
-                      as="input"
-                      type="text"
-                      id="sendersName"
-                      name="sendersName"
-                      placeholder="from your friend..."
-                    />
-                  </p>
                 </div>
-                <input
-                  type="submit"
-                  disabled={isCreating}
-                  value="Freeze this lolly and get a link"
-                />
+                <div className="flavours">
+                  <label htmlFor="topColor" className="pickerLabel">
+                    <Field
+                      as="input"
+                      type="color"
+                      className="colourpicker"
+                      id="topColor"
+                      name="topColor"
+                    />
+                  </label>{" "}
+                  <label htmlFor="middleColor" className="pickerLabel">
+                    <Field
+                      as="input"
+                      type="color"
+                      className="colourpicker"
+                      id="middleColor"
+                      name="middleColor"
+                    />
+                  </label>{" "}
+                  <label htmlFor="bottomColor" className="pickerLabel">
+                    <Field
+                      as="input"
+                      type="color"
+                      className="colourpicker"
+                      id="bottomColor"
+                      name="bottomColor"
+                    />
+                  </label>
+                </div>
+                <div className="info">
+                  <div className="details">
+                    <p>
+                      <label htmlFor="recipientName">To</label>{" "}
+                      <Field
+                        as="input"
+                        type="text"
+                        id="recipientName"
+                        name="recipientName"
+                        placeholder="A lolly for..."
+                      />
+                    </p>
+                    <div className="message">
+                      <label htmlFor="message">Say something nice</label>{" "}
+                      <Field
+                        as="textarea"
+                        name="message"
+                        id="message"
+                        cols={30}
+                        rows={10}
+                      />
+                    </div>
+                    <p>
+                      <label htmlFor="sendersName">From</label>{" "}
+                      <Field
+                        as="input"
+                        type="text"
+                        id="sendersName"
+                        name="sendersName"
+                        placeholder="from your friend..."
+                      />
+                    </p>
+                  </div>
+                  <input
+                    type="submit"
+                    disabled={isCreating}
+                    value="Freeze this lolly and get a link"
+                  />
+                </div>
               </div>
-            </div>
-          </Form>
-        )}
-      </Formik>
+            </Form>
+          )}
+        </Formik>
+      </ApolloProvider>
     </Layout>
   );
 };
