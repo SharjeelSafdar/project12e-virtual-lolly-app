@@ -11,15 +11,15 @@ export default {
     },
   },
   plugins: [
-    // {
-    //   resolve: `gatsby-source-graphql`,
-    //   options: {
-    //     typeName: "LOLLY",
-    //     fieldName: "lolly",
-    //     url:
-    //       "https://virtual-lolly-p12e.netlify.app/.netlify/functions/graphql-fauna",
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: "Lolly",
+        fieldName: "lolly",
+        url:
+          "https://virtual-lolly-p12e.netlify.app/.netlify/functions/graphql-fauna",
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {

@@ -5,7 +5,7 @@ const cache = new InMemoryCache();
 
 export const apolloClient = new ApolloClient({
   link: new HttpLink({
-    uri: "/.netlify/functions/graphql-fauna",
+    uri: "/new",
     fetch,
   }),
   cache,
