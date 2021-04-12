@@ -1,5 +1,5 @@
 const faunadb = require("faunadb");
-const pageTemplate = require("../lollyTemplate.js");
+const pageTemplate = require("./lollyTemplate.js");
 
 // setup and auth the Fauna DB client
 const q = faunadb.query;
