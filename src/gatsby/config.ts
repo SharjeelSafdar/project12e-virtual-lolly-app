@@ -16,8 +16,7 @@ export default {
       options: {
         typeName: "Lolly",
         fieldName: "lolly",
-        url:
-          "https://virtual-lolly-p12e.netlify.app/.netlify/functions/graphql-fauna",
+        url: "/.netlify/functions/graphql-fauna",
       },
     },
     `gatsby-plugin-react-helmet`,
