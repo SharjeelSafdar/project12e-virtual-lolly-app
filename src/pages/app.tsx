@@ -3,24 +3,15 @@ import { PageProps } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import DisplayLolly from "../components/displayLolly";
-import { useGetLollyByIdQuery } from "../api";
+import App from "../components/app";
 
-const FrozenLolly: FC<PageProps> = ({ location, navigate }) => {
+const FrozenLolly: FC<PageProps> = ({ location }) => {
   const id = location.search.slice(4);
-  const { data, error, loading } = useGetLollyByIdQuery({
-    variables: { id },
-  });
-
-  if (error) {
-    navigate("/404");
-  }
 
   return (
     <Layout>
       <SEO title="Frozen Lolly" />
-      {loading && <p>Loading...</p>}
-      {!loading && !error && data && <DisplayLolly lolly={data?.getLolly} />}
+      <App lollyId={id} />
     </Layout>
   );
 };
