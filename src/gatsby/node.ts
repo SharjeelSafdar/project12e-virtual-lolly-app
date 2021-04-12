@@ -20,9 +20,9 @@ export const createPages: GatsbyNode["createPages"] = async ({
       }
     }
   `);
-  const lollies = data?.lolly.getAllLollies;
 
-  if (lollies) {
+  if (data && data.lolly) {
+    const lollies = data.lolly.getAllLollies;
     lollies.forEach(lolly => {
       actions.createPage({
         path: `/lolly/${lolly.id}`,
