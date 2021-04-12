@@ -1,4 +1,9 @@
-import { GatsbySSR } from "gatsby";
-// export { wrapRootElement } from "./wrapRootElement";
+import React from "react";
+import { GatsbyBrowser } from "gatsby";
+import { ApolloProvider } from "@apollo/client";
 
-export default {} as GatsbySSR;
+import { apolloClient } from "../context/apolloClient";
+
+export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({
+  element,
+}) => <ApolloProvider client={apolloClient}>{element}</ApolloProvider>;
