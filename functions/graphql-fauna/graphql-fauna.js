@@ -17,6 +17,7 @@ const typeDefs = gql`
     sendersName: String!
   }
   type Query {
+    hi: String!
     getAllLollies: [Lolly]!
     getLolly(id: ID!): Lolly!
   }
@@ -34,6 +35,9 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
+    hi: () => {
+      return "Hello, World";
+    },
     getAllLollies: async () => {
       const res = await faunaClient.query(
         q.Paginate(q.Match(q.Index("all_lollies")))
@@ -69,11 +73,26 @@ const resolvers = {
     },
   },
   Mutation: {
-    createLolly: async (_, arguments) => {
+    createLolly: async (
+      _,
+      {
+        topColor,
+        middleColor,
+        bottomColor,
+        recipientName,
+        message,
+        sendersName,
+      }
+    ) => {
       const res = await faunaClient.query(
         q.Create(q.Collection("lollies"), {
           data: {
-            ...arguments,
+            topColor,
+            middleColor,
+            bottomColor,
+            recipientName,
+            message,
+            sendersName,
           },
         })
       );
@@ -85,7 +104,7 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  playground: true,
+  playground: false,
   introspection: true,
 });
 
