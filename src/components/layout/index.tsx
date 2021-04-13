@@ -1,8 +1,6 @@
 import React, { FC } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { ApolloProvider } from "@apollo/client";
 
-import { apolloClient } from "../../context/apolloClient";
 import Header from "../header";
 
 const Layout: FC = ({ children }) => {
@@ -26,9 +24,7 @@ const Layout: FC = ({ children }) => {
     <>
       <Header />
       <div className="container">
-        <main>
-          <ApolloProvider client={apolloClient}>{children}</ApolloProvider>
-        </main>
+        <main>{children}</main>
         <footer>
           <p>
             Hosted with{" "}
