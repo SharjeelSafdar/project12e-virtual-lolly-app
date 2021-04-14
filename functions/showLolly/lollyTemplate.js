@@ -13,7 +13,7 @@ module.exports = data => `
         fill: ${data.bottomColor};
       }
     </style>
-    <link rel="stylesheet" href="/commons.css">
+    <link rel="stylesheet" href="../../src/styles/global.css">
     <title>Frozen Lolly | Virtual Lolly App</title>
   </head>
   <body>
