@@ -3,6 +3,192 @@ module.exports = data => `
 <html lang="en">
   <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/css/styles.css">
     <style>
+      @import url("https://fonts.googleapis.com/css?family=Yellowtail&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ::-moz-selection {
+        background-color: #fa73d9;
+        color: #21212b;
+      }
+      ::selection {
+        background-color: #fa73d9;
+        color: #21212b;
+      }
+      body {
+        text-align: center;
+        background-color: #21212b;
+        color: #dadadb;
+        font-family: open-sans, Helvetica, sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.8;
+        min-height: 100vh;
+        background: #21212b;
+      }
+      @media (min-width: 400px) {
+        body {
+          font-size: 18px;
+        }
+      }
+      .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+      }
+      @media (min-width: 740px) {
+        .container {
+          width: 700px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .container {
+          width: 800px;
+        }
+      }
+      h1,
+      h2,
+      h3 {
+        color: #eee;
+        font-weight: 600;
+        margin-top: 3em;
+      }
+      h1,
+      h2,
+      h3 {
+        margin-bottom: 0.2em;
+        line-height: 1;
+      }
+      h1 {
+        font-family: Yellowtail, cursive;
+        font-size: 4em;
+        margin-top: 1em;
+      }
+      @media (min-width: 740px) {
+        h1 {
+          font-size: 4.5em;
+        }
+      }
+      @media (min-width: 1200px) {
+        h1 {
+          font-size: 5em;
+        }
+      }
+      h1.title a {
+        font-weight: 300;
+        color: #fff;
+        border-bottom-style: none;
+        text-shadow: #fa73d9 0 0 8px;
+      }
+      h1.title a:focus,
+      h1.title a:hover {
+        text-shadow: #fa73d9 0 0 16px;
+      }
+      .subtitle {
+        font-size: 1em;
+        font-style: italic;
+        color: #ddd;
+        text-shadow: #fa73d9 1px 1px 4px;
+        margin-top: 1.5em;
+        margin-bottom: 3em;
+        line-height: 1.2;
+      }
+      p {
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+      a:link,
+      a:visited {
+        color: #eee;
+        text-decoration: none;
+        border-bottom: 1px solid #f88cdd;
+      }
+      a:focus,
+      a:hover {
+        color: #eee;
+        border-bottom-color: #eee;
+      }
+      header {
+        text-align: center;
+      }
+      footer {
+        margin-top: 10em;
+        margin-bottom: 5em;
+        font-size: 0.7em;
+        color: #f4b1e4;
+      }
+      footer a:link,
+      footer a:visited {
+        color: #efe2ec;
+        border-bottom: #b95aa5;
+      }
+      footer a:focus,
+      footer a:hover {
+        color: #eee;
+        border-bottom: 1px solid #eee;
+      }
+      .lolly {
+        text-align: center;
+        -webkit-filter: drop-shadow(0 0 10px #000);
+        filter: drop-shadow(0 0 10px #000);
+      }
+      @media (min-width: 740px) {
+        .lolly {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .giftLolly svg {
+        margin-bottom: -4em;
+      }
+      @media (min-width: 740px) {
+        .giftLolly svg {
+          margin-bottom: 0;
+        }
+      }
+      @media (min-width: 740px) {
+        .info {
+          margin-left: 4em;
+        }
+      }
+      .details {
+        padding: 1em 2em;
+        margin-bottom: 1.5em;
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        text-align: left;
+        font-style: italic;
+        font-size: 1.1em;
+      }
+      .from,
+      .recipient {
+        font-family: Yellowtail, cursive;
+        font-size: 1.6em;
+        font-style: normal;
+        text-shadow: #000 0 0 10px;
+      }
+      .from {
+        padding-left: 2em;
+      }
+      .bytheway {
+        font-size: 0.7em;
+        color: hsla(0, 0%, 100%, 0.6);
+      }
+      @media (min-width: 740px) {
+        .bytheway {
+          font-size: 0.8em;
+        }
+      }
+      pre {
+        color: #fa73d9;
+        margin-top: 0.5em;
+        padding: 0.5em 1em;
+        border: 1px solid #000;
+        background-color: #000;
+      }
       .lollyTop {
         fill: ${data.topColor};
       }
@@ -13,7 +199,7 @@ module.exports = data => `
         fill: ${data.bottomColor};
       }
     </style>
-    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="stylesheet" href="./global.css">
     <title>Frozen Lolly | Virtual Lolly App</title>
   </head>
   <body>
