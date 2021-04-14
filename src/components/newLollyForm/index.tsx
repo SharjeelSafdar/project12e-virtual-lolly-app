@@ -7,6 +7,9 @@ import Lolly from "../lolly";
 import { useCreateLollyMutation } from "../../api";
 import { NewLollyFormValues } from "../../types";
 
+/**
+ * A form to create a new lolly for a recipient from a sender with a custom message.
+ */
 const NewLollyForm: FC = () => {
   const initialValues: NewLollyFormValues = {
     topColor: "#cd2753",

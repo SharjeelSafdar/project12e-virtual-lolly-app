@@ -10,7 +10,7 @@ const FrozenLolly: FC<PageProps<object, Lolly>> = ({ pageContext: lolly }) => {
   return (
     <Layout>
       <SEO title="Frozen Lolly" />
-      <DisplayLolly lolly={lolly} />
+      <DisplayLolly {...lolly} />
     </Layout>
   );
 };

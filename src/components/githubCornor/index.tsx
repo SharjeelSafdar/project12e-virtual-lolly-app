@@ -1,9 +1,12 @@
 import React, { FC } from "react";
 
-interface GithubCornorProps {
+export interface GithubCornorProps {
   repoUrl: string;
 }
 
+/**
+ * A beautiful component to display a Github Repo link at the top-right cornor.
+ */
 const GithubCornor: FC<GithubCornorProps> = ({ repoUrl }) => {
   return (
     <a

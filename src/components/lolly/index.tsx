@@ -1,12 +1,19 @@
 import React, { FC } from "react";
 
-interface LollyProps {
+export interface LollyProps {
   topColor?: string;
   middleColor?: string;
   bottomColor?: string;
 }
 
-const Lolly: FC<LollyProps> = ({ topColor, middleColor, bottomColor }) => {
+/**
+ * A component to display how the lollipop looks with the selected colors/flavors.
+ */
+const Lolly: FC<LollyProps> = ({
+  topColor = "#d52358",
+  middleColor = "#e95946",
+  bottomColor = "#deaa43",
+}) => {
   return (
     <svg
       className="lollipop"
@@ -69,13 +76,13 @@ const Lolly: FC<LollyProps> = ({ topColor, middleColor, bottomColor }) => {
           </mask>
           <use
             className="lollyBottom"
-            fill={bottomColor || "#deaa43"}
+            fill={bottomColor}
             fillRule="nonzero"
             href="#path-1"
           ></use>
           <rect
             className="lollyTop"
-            fill={topColor || "#d52358"}
+            fill={topColor}
             fillRule="nonzero"
             mask="url(#mask-2)"
             x="-25"
@@ -85,7 +92,7 @@ const Lolly: FC<LollyProps> = ({ topColor, middleColor, bottomColor }) => {
           ></rect>
           <rect
             className="lollyMiddle"
-            fill={middleColor || "#e95946"}
+            fill={middleColor}
             fillRule="nonzero"
             mask="url(#mask-2)"
             x="-29"

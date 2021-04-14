@@ -3,6 +3,9 @@ import { Link } from "gatsby";
 
 import GithubCornor from "../githubCornor";
 
+/**
+ * Header component that sits at the top of each component.
+ */
 const Header: FC = () => {
   const repoUrl =
     "https://github.com/SharjeelSafdar/project12e-virtual-lolly-app";

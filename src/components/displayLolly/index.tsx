@@ -4,11 +4,12 @@ import { Link } from "gatsby";
 import Lolly from "../lolly";
 import { Lolly as LollyType } from "../../types";
 
-interface DisplayLollyProps {
-  lolly: LollyType;
-}
+export type DisplayLollyProps = LollyType;
 
-const DisplayLolly: FC<DisplayLollyProps> = ({ lolly }) => {
+/**
+ * A component to display a lolly created by a user along with a message card.
+ */
+const DisplayLolly: FC<DisplayLollyProps> = lolly => {
   return (
     <div className="lolly">
       <div className="giftLolly">
