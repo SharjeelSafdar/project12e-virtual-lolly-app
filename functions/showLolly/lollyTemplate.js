@@ -133,7 +133,7 @@ module.exports = data => `
         -webkit-filter: drop-shadow(0 0 10px #000);
         filter: drop-shadow(0 0 10px #000);
       }
-      @media (min-width: 740px) {
+      @media (min-width: 950px) {
         .lolly {
           display: flex;
           flex-direction: row;
@@ -142,12 +142,7 @@ module.exports = data => `
         }
       }
       .giftLolly svg {
-        margin-bottom: -4em;
-      }
-      @media (min-width: 740px) {
-        .giftLolly svg {
-          margin-bottom: 0;
-        }
+        margin-bottom: 0;
       }
       @media (min-width: 740px) {
         .info {
@@ -188,6 +183,12 @@ module.exports = data => `
         padding: 0.5em 1em;
         border: 1px solid #000;
         background-color: #000;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-color: #21212b;
+        scrollbar-arrow-color: #fa73d9;
+        scrollbar-track-color: #000;
+        scrollbar-width: 5px;
       }
       .lollyTop {
         fill: ${data.topColor};
