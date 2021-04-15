@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -120,9 +121,9 @@ const NotFoundPage: FC = () => (
       </svg>
     </div>
     <p>
-      <a href="/create-new" className="btn">
+      <Link to="/create-new" className="btn">
         Make a new lollipop to send to a friend
-      </a>
+      </Link>
     </p>
   </Layout>
 );
