@@ -1,48 +1,5 @@
-import {
-  gql,
-  useQuery,
-  QueryHookOptions,
-  useMutation,
-  MutationHookOptions,
-} from "@apollo/client";
-import { Lolly, NewLollyFormValues } from "../types";
-
-// **************************************
-// Get Lolly by Id Query
-// **************************************
-export const GET_LOLLY_BY_ID = gql`
-  query GetLollyById($id: ID!) {
-    getLolly(id: $id) {
-      id
-      topColor
-      middleColor
-      bottomColor
-      recipientName
-      message
-      sendersName
-    }
-  }
-`;
-
-export type GetLollyByIdQueryResponse = {
-  getLolly: Lolly;
-};
-
-export type GetLollyByIdQueryVariables = {
-  id: string;
-};
-
-export const useGetLollyByIdQuery = (
-  baseOptions?: QueryHookOptions<
-    GetLollyByIdQueryResponse,
-    GetLollyByIdQueryVariables
-  >
-) => {
-  return useQuery<GetLollyByIdQueryResponse, GetLollyByIdQueryVariables>(
-    GET_LOLLY_BY_ID,
-    baseOptions
-  );
-};
+import { gql, useMutation, MutationHookOptions } from "@apollo/client";
+import { NewLollyFormValues } from "../types";
 
 // **************************************
 // Create New Lolly Mutation
