@@ -3,7 +3,7 @@ import { GatsbyConfig } from "gatsby";
 export default {
   siteMetadata: {
     title: `Virtual Lolly App`,
-    description: `A Serverless JAMstack Virtual Lolly App with Gatsby, Netlify, FaunaDB, GraphQL and TypeScript.`,
+    description: `A Serverless JAMstack Virtual Lolly App with Gatsby, Storybook, Netlify, FaunaDB, GraphQL and TypeScript.`,
     author: {
       name: `Mian Muhammad Sharjeel Safdar`,
       email: `miansharjeelsafdar@gmail.com`,

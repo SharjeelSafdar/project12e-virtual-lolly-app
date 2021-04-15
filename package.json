@@ -1,7 +1,7 @@
 {
   "name": "project12e-virtual-lolly-app",
   "private": true,
-  "description": "A Serverless JAMstack Virtual Lolly App with Gatsby, Netlify, FaunaDB, GraphQL and TypeScript",
+  "description": "A Serverless JAMstack Virtual Lolly App with Gatsby, Storybook, Netlify, FaunaDB, GraphQL and TypeScript",
   "version": "0.1.0",
   "author": "Mian Muhammad Sharjeel Safdar <miansharjeelsafdar@gmail.com>",
   "dependencies": {
