@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+// import { useStaticQuery, graphql } from "gatsby";
 
 interface SeoProps {
   description?: string;
@@ -12,23 +12,37 @@ interface SeoProps {
 }
 
 const SEO: FC<SeoProps> = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery<QueryResponse>(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author {
-              email
-              github
-              name
-            }
-          }
-        }
-      }
-    `
-  );
+  // const { site } = useStaticQuery<QueryResponse>(
+  //   graphql`
+  //     query {
+  //       site {
+  //         siteMetadata {
+  //           title
+  //           description
+  //           author {
+  //             email
+  //             github
+  //             name
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `
+  // );
+
+  const { site }: QueryResponse = {
+    site: {
+      siteMetadata: {
+        title: `Virtual Lolly App`,
+        description: `A Serverless JAMstack Virtual Lolly App with Gatsby, Netlify, FaunaDB, GraphQL and TypeScript.`,
+        author: {
+          name: `Mian Muhammad Sharjeel Safdar`,
+          email: `miansharjeelsafdar@gmail.com`,
+          github: `https://github.com/SharjeelSafdar/`,
+        },
+      },
+    },
+  };
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata.title;

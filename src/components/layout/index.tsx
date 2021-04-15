@@ -1,23 +1,33 @@
 import React, { FC } from "react";
-import { useStaticQuery, graphql } from "gatsby";
+// import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "../header";
 
 const Layout: FC = ({ children }) => {
-  const data = useStaticQuery<QueryResponse>(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            author {
-              github
-              name
-            }
-          }
-        }
-      }
-    `
-  );
+  // const data = useStaticQuery<QueryResponse>(
+  //   graphql`
+  //     query {
+  //       site {
+  //         siteMetadata {
+  //           author {
+  //             github
+  //             name
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `
+  // );
+  const data: QueryResponse = {
+    site: {
+      siteMetadata: {
+        author: {
+          name: `Mian Muhammad Sharjeel Safdar`,
+          github: `https://github.com/SharjeelSafdar/`,
+        },
+      },
+    },
+  };
   const author = data.site.siteMetadata.author;
 
   return (
